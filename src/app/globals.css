@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 251, 235;
+  --background-end-rgb: 255, 247, 237;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom right,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+}
+
+@keyframes pulse-border {
+  0% { border-color: rgba(217, 119, 6, 0.1); }
+  50% { border-color: rgba(217, 119, 6, 0.3); }
+  100% { border-color: rgba(217, 119, 6, 0.1); }
+}
+
+.animate-pulse-border {
+  animation: pulse-border 2s ease-in-out infinite;
+}
+
+@keyframes slide-in-from-bottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-from-bottom {
+  animation: slide-in-from-bottom 0.5s ease-out;
+}
